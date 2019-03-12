@@ -221,7 +221,7 @@ def accessibleDist(plateau,ligD,colD,ligA,colA):
             if c["valeurs"][ligAc-1][colAc]==c["valeurs"][ligAc][colAc]-1:
                 listeVal.append((ligAc-1,colAc))
                 ligAc=ligAc-1
-            elif c["valeurs"][ligAc+1][colAc]==c["valeurs"][ligAc][colAc]-1:
+            elif c["valeurs"][ligAc][colAc]==c["valeurs"][ligAc][colAc]-1:
                 listeVal.append((ligAc+1,colAc))
                 ligAc=ligAc+1
             elif c["valeurs"][ligAc][colAc-1]==c["valeurs"][ligAc][colAc]-1:
