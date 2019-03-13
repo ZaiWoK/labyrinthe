@@ -32,7 +32,6 @@ def Labyrinthe(nomsJoueurs=["joueur1","joueurs2"],nbTresors=24, nbTresorsMax=0):
             poserPionPlateau(Labyrinthe["Plateau"],6,6,i)
     return Labyrinthe
 laby=Labyrinthe()
-print(laby)
 def getPlateau(Labyrinthe):
     """
     retourne la matrice représentant le plateau de jeu

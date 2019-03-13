@@ -21,7 +21,6 @@ class LabyrintheGraphique(object):
         self.fini=False
         self.couleurTexte=couleur
         self.laMatrice=getPlateau(labyrinthe)["plateau"]
-        print(self.laMatrice)
         self.nbCol=getNbColonnes(self.laMatrice["matrice"])
         self.nbLig=getNbLignes(self.laMatrice["matrice"])
         self.titre=titre
@@ -386,8 +385,10 @@ if __name__=='__main__':
     ok=True
     if int(nbTresors)>24:
         print("Ce nombre est trop elevé!")
+        time.sleep(0.5)
         nbTresors=0
         print("Le nombre maximum de trésor a été choisi")
+        time.sleep(1)
     try:
         nbTresorsInt=int(nbTresors)
     except:
