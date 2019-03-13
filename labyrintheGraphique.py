@@ -384,11 +384,14 @@ if __name__=='__main__':
     # saisie du nombre de trésors par joueur
     nbTresors=input("Combien de trésors à trouver par joueur (0 pour le maximum possible)?")
     ok=True
+    if int(nbTresors)>24:
+        print("Ce nombre est trop elevé!")
+        nbTresors=0
+        print("Le nombre maximum de trésor a été choisi")
     try:
         nbTresorsInt=int(nbTresors)
     except:
         nbTresorsInt=0
-        print("Le nombre maximum de trésor a été choisi")
     #initialisation du labyrinthe
     l=Labyrinthe(listeJoueurs,nbTresorsMax=nbTresorsInt)
     #initialisation de l'affichage
