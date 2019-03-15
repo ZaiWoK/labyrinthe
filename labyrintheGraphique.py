@@ -32,6 +32,8 @@ class LabyrintheGraphique(object):
         self.surface=pygame.display.get_surface()
         self.miseAjourParametres()
         self.afficheJeu()
+        pygame.mixer.init()
+
         
         
 
@@ -321,6 +323,8 @@ class LabyrintheGraphique(object):
                         self.messageInfo="La carte a été tournée"
                         self.imgInfo=[]
                     elif res==1:
+                        pygame.mixer.music.load("insert.mp3")
+                        pygame.mixer.music.play()
                         self.messageInfo="La carte a bien été insérée"
                         self.imgInfo=[]
                     elif res==2:
@@ -347,10 +351,14 @@ class LabyrintheGraphique(object):
                             t=tresorCourant(getListeJoueurs(self.labyrinthe))
                             res2=finirTour(self.labyrinthe)
                             if res2==2:
+                                pygame.mixer.music.load("victory.wav")
+                                pygame.mixer.music.play()
                                 self.messageInfo="Le joueur @img@ a gagné"
                                 self.imgInfo=[self.surfacePion(jc)]
                                 self.fini=True
                             elif res2==1:
+                                pygame.mixer.music.load("found.wav")
+                                pygame.mixer.music.play()
                                 self.messageInfo="Le joueur @img@ vient de trouver le trésor @img@"
                                 self.imgInfo=[self.surfacePion(jc),self.surfaceTresor(t)]
                             changerPhase(self.labyrinthe)
